@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Static meta data -->
+        <meta name="author" content="RhinoAfrica" />
+        <meta name="robots" content="index, follow" />
+
+        <title>{{ metaTitle }}</title>
+        <meta name="description" content="{{ metaDescription }}" />
+        <meta name="keywords" content="{{ metaKeywords }}" />
+        
+        <!-- Open Graph (Facebook, LinkedIn) -->
+        <meta property="og:title" content="{{ metaTitle }}" />
+        <meta property="og:description" content="{{ metaDescription }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://example.com{{ metaSlug }}" />
+        <meta property="og:image" content="https://example.com{{ metaOgImage }}" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ metaTitle }}" />
+        <meta name="twitter:description" content="{{ metaDescription }}" />
+        <meta name="twitter:image" content="https://example.com{{ metaOgImage }}" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.ico" />
+    </head>
+    <body>
+        {% include "components/header.njk" %}
+
+        <main>
+            <section class="intro">
+                <h1>{{ intro.title }}</h1>
+                <p>{{ intro.copy }}</p>
+            </section>
+
+            {% if whatWeDo %}
+                <section class="what-we-do">
+                    <h2>{{ whatWeDo.title }}</h2>
+                    <p>{{ whatWeDo.copy }}</p>
+                </section>
+            {% endif %}
+
+            <section class="markdown-content">
+                {{ content | safe }}
+            </section>
+        </main>
+
+        {% include "components/footer.njk" %}
+    </body>
+</html>

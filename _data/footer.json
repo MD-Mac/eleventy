@@ -1,0 +1,13 @@
+{
+    "links": [
+        {
+            "label": "Privacy Policy",
+            "url": "/privacy/"
+        },
+        {
+            "label": "Terms of Service",
+            "url": "/terms/"
+        }
+    ],
+    "copyright": "© 2025 Generic Footer Stuff"
+}
